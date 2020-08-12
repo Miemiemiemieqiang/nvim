@@ -61,19 +61,12 @@ noremap <C-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 
 
 call plug#begin('~/.config/nvim/plugged')
-"Plug 'ycm-core/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
-"Plug 'tpope/vim-fugitive'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-"Plug 'ncm2/ncm2'
-"Plug 'roxma/nvim-yarp'
-"Plug 'ncm2/ncm2-bufword'
-"Plug 'ncm2/ncm2-path'
-"Plug 'ObserverOfTime/ncm2-jc2', {'for': ['java']}
-"Plug 'artur-shaik/vim-javacomplete2', {'for': ['java']}
 call plug#end()
 
 "-----Commands----
