@@ -57,6 +57,9 @@ noremap <silent> H 0
 " I key: go to the end of the line
 noremap <silent> L $
 
+noremap <C-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
+
+
 call plug#begin('~/.config/nvim/plugged')
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
