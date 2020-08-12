@@ -42,6 +42,12 @@ map R :source $MYVIMRC<CR>
 " Disable the default s key
 noremap s <nop>
 
+" split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
+noremap sk :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap sj :set splitbelow<CR>:split<CR>
+noremap sh :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+noremap sl :set splitright<CR>:vsplit<CR>
+
 " U/E keys for 5 times u/e (faster navigation)
 noremap <silent> K 5k
 noremap <silent> J 5j
