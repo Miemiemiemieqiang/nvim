@@ -60,12 +60,17 @@ noremap <silent> L $
 noremap <C-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 
 
+filetype plugin on
 call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'dkarter/bullets.vim'
+Plug 'mzlogin/vim-markdown-toc', {'for': ['gitignore', 'markdown', 'vim-plug']}
 
 call plug#end()
 
@@ -86,29 +91,51 @@ autocmd VimEnter * wincmd p
 let NERDTreeShowBookmarks=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"------vim-colorschemes-----
-:colorscheme 1989
+"vim-colorschemes
 "
-"-----airline------
+:colorscheme 1989
+
+"airline
+"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 
-"-----ncm2------
-"缓存
-"autocmd BufEnter * call ncm2#enable_for_buffer()
-" 补全模式,具体详情请看下文
-"set completeopt=noinsert,menuone,noselect
-    " When the <Enter> key is pressed while the popup menu is visible, it only
-    " hides the menu. Use this mapping to close the menu and also start a new
-    " line.
-"inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+"vim-instant-markdown
+"ref: https://github.com/suan/vim-instant-markdown
+"npm -g install instant-markdown-d
+"
+"Uncomment to override defaults:
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1
 
-    " Use <TAB> to select the popup menu:
-"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"Bullets.vim
+"ref: https://github.com/dkarter/bullets.vim
+"
+"let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit',
+    \ 'scratch'
+    \]
 
+"vim-markdown-toc
+"ref : https://github.com/mzlogin/vim-markdown-toc
+"
+"let g:vmt_auto_update_on_save = 0
+"let g:vmt_dont_insert_fence = 1
+let g:vmt_cycle_list_item_markers = 1
+let g:vmt_fence_text = 'TOC'
+let g:vmt_fence_closing_text = '/TOC'
 
 " Compile function
 noremap r :call CompileRunGcc()<CR>
