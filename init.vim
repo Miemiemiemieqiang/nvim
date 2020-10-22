@@ -72,6 +72,8 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'dkarter/bullets.vim'
 Plug 'mzlogin/vim-markdown-toc', {'for': ['gitignore', 'markdown', 'vim-plug']}
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 "-----Commands----
@@ -171,6 +173,12 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+
+
+" ===
+" === coc
+" ===
+let g:coc_global_extensions = ['coc-json', 'coc-rome']
 
 " ===
 " === Window management
