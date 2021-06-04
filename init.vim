@@ -85,10 +85,10 @@ noremap K I
 " Create a new tab with tu
 map tu :tabe<CR>
 " Move around tabs with tn and ti
-map tn :-tabnext<CR>
+map th :-tabnext<CR>
 map te :+tabnext<CR>
 " Move the tabs with tmn and tmi
-map tmn :-tabmove<CR>
+map tmh :-tabmove<CR>
 map tmi :+tabmove<CR>
 
 " ===
@@ -196,7 +196,7 @@ let g:airline#extensions#tabline#formatter = 'default'
 
 
 " ===
-" === vim-instant-markdown 
+" === vim-instant-markdown
 " ===
 " ref: https://github.com/suan/vim-instant-markdown
 " npm -g install instant-markdown-d
@@ -209,8 +209,8 @@ let g:instant_markdown_autostart = 0
 "let g:instant_markdown_allow_external_content = 0
 "let g:instant_markdown_mathjax = 1
 "let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
-"let g:instant_markdown_autoscroll = 0
-"let g:instant_markdown_port = 8888
+let g:instant_markdown_autoscroll = 0
+let g:instant_markdown_port = 8888
 "let g:instant_markdown_python = 1
 
 " ===
